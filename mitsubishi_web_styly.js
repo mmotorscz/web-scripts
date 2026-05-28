@@ -142,8 +142,7 @@ window.addEventListener("resize", () => {
 
 
 function activateTab1(pageId) {
- 
- for (var j = 1; j <= 2; j++) {
+  for (var j = 1; j <= 2; j++) {
   var tabCtrl = document.getElementById('tabs1-'.concat(j));
   var pageToActivate = document.getElementById(pageId.concat('-',j));
   for (var i = 0; i < tabCtrl.childNodes.length; i++) {
@@ -151,6 +150,10 @@ function activateTab1(pageId) {
    if (node.nodeType == 1) { /* Element */
     node.style.display = (node == pageToActivate) ? 'block' : 'none';
    };
+  };
+  var selects = tabCtrl.getElementsByTagName('select');
+  for (var k = 0; k < selects.length; k++) {
+   selects[k].value = pageId;
   };
  };
 };
@@ -165,8 +168,11 @@ function activateTab2(pageId) {
     node.style.display = (node == pageToActivate) ? 'block' : 'none';
    };
   };
+  var selects = tabCtrl.getElementsByTagName('select');
+  for (var k = 0; k < selects.length; k++) {
+   selects[k].value = pageId;
+  };
  };
-
 };
 
 function activateTab3(pageId) {
@@ -179,6 +185,9 @@ function activateTab3(pageId) {
     node.style.display = (node == pageToActivate) ? 'block' : 'none';
    };
   };
+  var selects = tabCtrl.getElementsByTagName('select');
+  for (var k = 0; k < selects.length; k++) {
+   selects[k].value = pageId;
+  };
  };
-
 };
